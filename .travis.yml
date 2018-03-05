@@ -5,11 +5,23 @@ cache:
   - _build
 addons:
   postgresql: "9.5"
+
 elixir:
   - 1.3.4
+  - 1.4.5
+  - 1.5.3
+  - 1.6.0
+
 otp_release:
-  - 18.2
-  - 19.1
+  - 18.3
+  - 19.3
+  - 20.2
+
+matrix:
+  exclude:
+    - elixir: 1.6.0
+      otp_release: 18.3
+
 env:
   global:
     - MIX_ENV=test
